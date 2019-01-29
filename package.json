@@ -1,0 +1,9 @@
+{
+  "name": "tensorflow-js-playground",
+  "version": "1.0.0",
+  "description": "A machine learning playground with tensorflow js",
+  "main": "index.js",
+  "author": "Vlad Nicula",
+  "license": "MITballs",
+  "private": true
+}
