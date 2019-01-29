@@ -1,6 +1,27 @@
 <html>
 <body>
-  <canvas id='pixel-panel'></canvas>
+  <div>
+      
+    <p>
+      <label for='json-upload'>Model JSON</label>
+      <input id='json-upload' name="json-upload" type="file" />
+    </p>
+    <p>
+        <label for='weights-upload'>Weights FILE</label>
+        <input id='weights-upload' name="weights-upload" type="file" />
+    </p>
+
+    <button id='run-button'>Run</button>
+  </div>
+  <div id='previewers'>
+      <canvas 
+        style="width: 128px; height:64px; border: 1px solid #ddd" 
+        id='pixel-panel'
+        width="128"
+        height="64"
+      >
+      </canvas>
+  </div>
   <script src="./index.ts"></script>
 </body>
 </html>

@@ -38,16 +38,15 @@ const printFromPixelArray = (dataArray: number[]) => {
   context2D.putImageData(iamgeContent, 0, 0)
 }
 
-export const run = async () => {
-  const modelJSON = require("../assets/nn/model.json")
+export const run = async (modelData, weightData) => {
 
   // loadModel expets to "load" from http or something like that.
   // we can also provide a API interface that loads data. 
   // since we have the data already here in modelJSON, we pass it
   // along.
-  const model = await tf.loadModel({
-    load: () => modelJSON
-  })
+  const model = await tf.loadModel(
+    tf.io.browserFiles([modelData, weightData])
+  )
 
   // const model = await tf.loadModel('../assets/nn/model.json')
 

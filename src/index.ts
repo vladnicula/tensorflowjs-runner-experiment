@@ -2,12 +2,14 @@ console.log('hello world')
 
 import { run } from './app'
 
-(async function () {
-  console.log('preparing to run...')
-  await run()
-  console.log('run complete')
-})().catch((err) => {
-  console.warn('Unhandled error capture in final catch of app')
-  console.error(err)
-})
+const button = document.getElementById('run-button')
 
+button.addEventListener('click', async () => {
+  const jsonUpload = document.getElementById('json-upload');
+  const weightsUpload = document.getElementById('weights-upload');
+
+  if ( jsonUpload.files[0] && weightsUpload.files[0] ) {
+    await run(jsonUpload.files[0], weightsUpload.files[0])
+  }
+
+})
